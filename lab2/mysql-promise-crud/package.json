@@ -1,0 +1,53 @@
+{
+  "_from": "mysql-promise-crud",
+  "_id": "mysql-promise-crud@1.0.2",
+  "_inBundle": false,
+  "_integrity": "sha512-T3q22IpFqCeEIMV3hr4gUZfKoWkeO6q1vTyi0CqNHtVs7TZGWvq1lmrpshljwT/KE8QC4UDocwFVjMz+STJR6Q==",
+  "_location": "/mysql-promise-crud",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "tag",
+    "registry": true,
+    "raw": "mysql-promise-crud",
+    "name": "mysql-promise-crud",
+    "escapedName": "mysql-promise-crud",
+    "rawSpec": "",
+    "saveSpec": null,
+    "fetchSpec": "latest"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/mysql-promise-crud/-/mysql-promise-crud-1.0.2.tgz",
+  "_shasum": "da6c017b68a75278ff47e3a5d0a006f5beb5de42",
+  "_spec": "mysql-promise-crud",
+  "_where": "C:\\Users\\andre\\Documents\\lab2-3",
+  "author": {
+    "name": "Online"
+  },
+  "bugs": {
+    "url": "https://github.com/Online13/MySQL/issues"
+  },
+  "bundleDependencies": false,
+  "dependencies": {
+    "mysql": "^2.18.1"
+  },
+  "deprecated": false,
+  "description": "A simple object that use Promise and some function for connect and query to mysql database",
+  "homepage": "https://github.com/Online13/MySQL#readme",
+  "keywords": [
+    "mysql"
+  ],
+  "license": "ISC",
+  "main": "index.js",
+  "name": "mysql-promise-crud",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Online13/MySQL.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "version": "1.0.2"
+}
