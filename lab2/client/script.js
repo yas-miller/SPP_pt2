@@ -65,19 +65,29 @@ window.onload = async function() {
    };
 };
 
+function timestampToDatetimeInputString(timestamp) {
+    const date = new Date((timestamp + _getTimeZoneOffsetInMs()));
+    // slice(0, 19) includes seconds
+    return date.toISOString().slice(0, 19);
+}
+
+function _getTimeZoneOffsetInMs() {
+    return new Date().getTimezoneOffset() * -60 * 1000;
+}
+
 function update(uuid, name, description, dateTime) {
     taskUUID = uuid;
 
     document.getElementById("nameUpdate").value = name;
     document.getElementById("descriptionUpdate").value = description;
-    document.getElementById("dateTimeUpdate").value = dateTime;
+    document.getElementById("dateTimeUpdate").value = timestampToDatetimeInputString(new Date(dateTime));
 
     $('#update-Modal').modal('show');
     //$('#update-Modal').modal('toggle');
     //$('#update-Modal').modal();
 }
 
-async function delete(uuid) {
+async function deletee(uuid) {
     const response = await clientRequest(`/api/tasks/${uuid}`, "DELETE");
     if (response.message !== "Unauthorized user")
         document.getElementsByClassName(uuid.toString())[0].remove();
@@ -174,7 +184,7 @@ function getTask(task, position = null) {
                                 <hr>
 
                                 <button type="button" class="btn btn-primary" onclick="update('${task.uuid}','${task.name}','${task.description}', '${task.dateTime}')">Update</button>
-                                <button type="button" class="btn btn-danger" id="deleteBtn" onclick="delete('${task.uuid}')">Delete</button>
+                                <button type="button" class="btn btn-danger" id="deleteBtn" onclick="deletee('${task.uuid}')">Delete</button>
                             </div>
                         </div> 
                     </div>`;
@@ -190,7 +200,7 @@ function getTask(task, position = null) {
                                 <hr>
 
                                 <button type="button" class="btn btn-primary" onclick="update('${task.uuid}','${task.name}','${task.description}', '${task.dateTime}')">Update</button>
-                                <button type="button" class="btn btn-danger" id="deleteBtn" onclick="delete('${task.uuid}')">Delete</button>
+                                <button type="button" class="btn btn-danger" id="deleteBtn" onclick="deletee('${task.uuid}')">Delete</button>
                             </div>
                         </div>`;
     }
