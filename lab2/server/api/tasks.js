@@ -70,7 +70,7 @@ tasksRouter.post('/api/filter', auth, (req, res) => {
     }
 
     if ((_filters.fromDateTime.length !== 0) && (_filters.toDateTime.length !== 0))
-        filters = filters.filter(task => (Date.parse(task.dateTime) >= _filters.fromDateTime) && (Date.parse(task.dateTime) <= _filters.toDateTime));
+        filters = filters.filter(task => (Date.parse(task.dateTime) >= Date.parse(_filters.fromDateTime)) && (Date.parse(task.dateTime) <= Date.parse(_filters.toDateTime)));
 
     switch (_filters.sortOption) {
 
